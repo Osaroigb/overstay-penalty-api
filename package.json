@@ -20,12 +20,12 @@
     "seed:all": "sequelize db:seed:all",
     "seed:undo": "sequelize db:seed:undo",
     "seed:undo:all": "sequelize db:seed:undo:all",
-    "make:seed": "sequelize seed:generate --seeders-path src/database/seeders",
+    "make:seed": "sequelize seed:generate",
     "migrate": "sequelize db:migrate",
     "migrate:all": "sequelize db:migrate:all",
     "migrate:undo": "sequelize db:migrate:undo",
     "migrate:undo:all": "sequelize db:migrate:undo:all",
-    "make:migration": "sequelize migration:generate --migrations-path src/database/migrations"
+    "make:migration": "sequelize migration:generate"
   },
   "keywords": [],
   "author": "Osaro Igbinovia",

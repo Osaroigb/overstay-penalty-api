@@ -14,6 +14,10 @@ This section will guide you through the setup process required to get up and run
 
 -   NPM (Version >= 9.6.7)
 
+-   Express (Version >= 4.17)
+
+-   PostgreSQL (Version >= 15.0)
+
 -   TypeScript (`npm install -g typescript`)
 
 
