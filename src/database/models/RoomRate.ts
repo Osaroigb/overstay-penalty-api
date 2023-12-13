@@ -5,7 +5,7 @@ export type RoomRateAttributes = InferAttributes<RoomRate>;
 export type RoomRateCreationAttributes = InferCreationAttributes<RoomRate>;
 
 class RoomRate extends Model<RoomRateAttributes, RoomRateCreationAttributes> {
-  declare Room_type: "regular" | "deluxe" | "palatial";
+  declare Room_type: 'regular' | 'deluxe' | 'palatial';
 
   declare Weekday_rates_increase: string;
 
@@ -15,15 +15,15 @@ class RoomRate extends Model<RoomRateAttributes, RoomRateCreationAttributes> {
 RoomRate.init(
   {
     Room_type: {
-      type: DataTypes.ENUM("regular", "deluxe", "palatial"),
+      type: DataTypes.ENUM('regular', 'deluxe', 'palatial'),
       allowNull: false
     },
     Weekday_rates_increase: {
-      type: DataTypes.STRING(20),
+      type: DataTypes.STRING(10),
       allowNull: false
     },
     Weekend_rates_increase: {
-      type: DataTypes.STRING(20),
+      type: DataTypes.STRING(10),
       allowNull: false
     }
   },

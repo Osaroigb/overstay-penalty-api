@@ -15,7 +15,17 @@
     "lint": "eslint --ext .ts,.js src/**",
     "lint-fix": "npm run lint -- --fix",
     "prettier": "prettier \"**/*.+(ts|js)\"",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "seed": "sequelize db:seed --seed ",
+    "seed:all": "sequelize db:seed:all",
+    "seed:undo": "sequelize db:seed:undo",
+    "seed:undo:all": "sequelize db:seed:undo:all",
+    "make:seed": "sequelize seed:generate --seeders-path src/database/seeders",
+    "migrate": "sequelize db:migrate",
+    "migrate:all": "sequelize db:migrate:all",
+    "migrate:undo": "sequelize db:migrate:undo",
+    "migrate:undo:all": "sequelize db:migrate:undo:all",
+    "make:migration": "sequelize migration:generate --migrations-path src/database/migrations"
   },
   "keywords": [],
   "author": "Osaro Igbinovia",

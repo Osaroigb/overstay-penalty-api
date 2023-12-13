@@ -26,6 +26,21 @@ This section will guide you through the setup process required to get up and run
 3. Create a `.env` file and copy the content of `.env.example` to it
 
 
+### Database Setup
+
+1. Create a new database in postgresql
+
+2. Fill the `.env` file you created with the database credentials
+
+3. Run `npm run make:migration` to generate migration files, e.g `npm run make:migration -- --name create_reservation_table`. This is OPTIONAL since the migration files have already been generated
+
+4. Run `npm run migrate` to create the tables, You can run `npm run migrate:undo` to undo the last migration or `npm run migrate:undo:all` to undo all migrations
+
+5. Run `npm run make:seed` to generate seeder files, e.g `npm run make:seed -- --name seed_customer_reservations`. This is OPTIONAL since the seeder files have already been generated
+
+6. Run `npm run seed:all` to populate tables with needed data
+
+
 ### Development
 
 To start the service, use the command: `npm run start`

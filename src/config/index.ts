@@ -9,7 +9,7 @@ const config = convict({
   },
   port: {
     arg: 'port',
-    default: 5000,
+    default: 3300,
     doc: 'The port to bind',
     env: 'APP_PORT',
     format: 'port'
@@ -71,7 +71,7 @@ const config = convict({
       format: Boolean
     },
     dialect: {
-      default: "postgres",
+      default: 'postgres',
     }
   }
 });

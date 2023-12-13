@@ -2,7 +2,7 @@
 require('dotenv/config');
 let databaseConfig;
 
-if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "staging") {
+if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'staging') {
   databaseConfig = {
     host: process.env.POSTGRES_DATABASE_HOST || '127.0.0.1',
     username: process.env.POSTGRES_DATABASE_USERNAME || 'root',
