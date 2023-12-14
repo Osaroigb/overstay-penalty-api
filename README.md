@@ -76,6 +76,76 @@ Example: `logger.error('You just committed a crime!')`
 
 Ensure you avoid using `console.log` statements anywhere in the code.
 
+### Assumptions:
+
+1. Weekend Days Definition:
+   - For simplicity, weekends are considered as Saturday and Sunday.
+
+2. Overstay Calculation Interval:
+   - Overstay fees are calculated per hour.
+
+3. Overstay Fee Calculation:
+   - Overstay fees are calculated as a percentage of room rates.
+   - Different room types have different rates, and the rates vary for weekdays and weekends.
+
+4. Time Format Assumption:
+   - A 24-hour date-time format is assumed for clarity in differentiating between AM and PM.
+
+5. Reservation Status Assumption:
+   - The status of a reservation is assumed to be either 'paid' or 'unpaid.'
+
+6. Default Reservation Status Assumption:
+   - When a customer makes a new reservation, the default status is set to 'unpaid' until payments are made and confirmed.
+
+7. Environment Assumption:
+   - Staging, development, test, and production Node environments all use the same database for simplicity in this test case.
+
+8. Actual Checkout Time Assumption:
+   - The guest will provide the actual checkout time in the format `YYYY-MM-DD HH:mm`, for example: "2021-01-01 16:28"
+
+### Approach:
+
+1. Endpoints:
+
+   - POST /v1/overstay/:reservation_id
+     - Calculate and return the overstay fee for a specific reservation.
+     - Include the `actual_checkout_time` in the request body (JSON) provided by the guest upon leaving.
+
+2. Middlewares:
+
+   - Error Handling Middleware:
+     - Handle errors gracefully, providing meaningful responses.
+
+   - Validation Middleware:
+     - Validate the incoming request parameters `reservation_id` & `actual_checkout_time`, ensuring they meet the expected format and constraints.
+
+3. Files and Structure:
+
+   - penaltyCalculator.route.ts:
+     - Define route handling logic.
+     - Import the controller methods for handling the overstay calculation.
+
+   - penaltyCalculator.controller.ts:
+     - Implement controller methods that interact with the service to calculate overstay fees.
+     - Extract `reservation_id` and `actual_checkout_time` from the request body and parameter.
+     - Call the `penaltyCalculator.service.ts` to perform the calculation.
+
+   - penaltyCalculator.service.ts:
+     - Implement service methods responsible for business logic.
+     - Extract and fetch reservation details from the database based on `reservation_id`.
+     - Utilize `penaltyCalculator.helper.ts` to calculate overstay fees.
+     - Return the result which is the calculated overstay fee to the controller and guest
+
+   - penaltyCalculator.helper.ts:
+     - Implement helper methods for specific calculations.
+     - Calculate overstay fees based on room type, hourly rates, and weekend/weekday rates.
+
+   - penaltyCalculator.interface.ts:
+     - Define interfaces for request/response objects to ensure consistency and maintainability.
+
+   - penaltyCalculator.constant.ts:
+     - Store constant values, such as days considered as weekends and room rates.
+
 
 ### Environment
 
