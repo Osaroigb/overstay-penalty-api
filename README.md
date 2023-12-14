@@ -60,6 +60,15 @@ If you set `8800` as your `APP_PORT` env, then you can access the swagger UI web
 It is important to set up environment variables for the system to function properly
 
 
+### API Documentation
+
+Explore the API endpoints and learn how to use them by referring to the Postman Documentation published here `https://documenter.getpostman.com/view/23691550/2s9YkkeNcw`
+
+This documentation provides a detailed guide on interacting with the service, including request payloads, response formats, and usage examples.
+
+Feel free to use the Postman documentation as a reference to understand the available endpoints and make requests to the service.
+
+
 ### Logging
 
 Sometimes, it's necessary to send logs to the stdout or store them, to do this, make use of the exported [logger](src/utils/logger)
