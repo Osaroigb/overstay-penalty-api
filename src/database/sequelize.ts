@@ -4,7 +4,7 @@ import { Sequelize, Options } from 'sequelize';
 
 let sequelize: any;
 
-if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'staging') {
+if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
   const { host, name, username, password, port } = config.get('postgreSqlDatabase');
   
   const databaseOptions: Options = {

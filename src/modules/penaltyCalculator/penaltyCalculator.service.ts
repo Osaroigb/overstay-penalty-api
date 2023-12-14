@@ -34,6 +34,6 @@ export const processGetOverstayFee = async (data: CalculatorParams): Promise<Res
   } catch (error: any) {
 
     logger.error('Error calculating overstay fees:', error);
-    throw new BadRequestError(`Error calculating overstay fees: ${error}`, error);
+    throw new BadRequestError(`${error}`, error);
   }
 };

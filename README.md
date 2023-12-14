@@ -40,9 +40,11 @@ This section will guide you through the setup process required to get up and run
 
 4. Run `npm run seed:all` to populate tables with needed data
 
-5. Optionally run `npm run make:migration` to generate migration files, e.g `npm run make:migration -- --name create_reservation_table`. This is OPTIONAL since the migration files have already been generated
+5. Run `npm run generate-swagger` to generate Swagger documentation for the API endpoints
 
-6. Optionally run `npm run make:seed` to generate seeder files, e.g `npm run make:seed -- --name seed_customer_reservations`. This is OPTIONAL since the seeder files have already been generated
+6. Optionally run `npm run make:migration` to generate migration files, e.g `npm run make:migration -- --name create_reservation_table`. This is OPTIONAL since the migration files have already been generated
+
+7. Optionally run `npm run make:seed` to generate seeder files, e.g `npm run make:seed -- --name seed_customer_reservations`. This is OPTIONAL since the seeder files have already been generated
 
 
 ### Development
@@ -51,7 +53,9 @@ To start the service, use the command: `npm run start`
 
 Use `development` as your node environment `NODE_ENV` to run the application
 
-If you set `8800` as your `APP_PORT` env, then you can access the swagger UI at `http://localhost:8800/api-docs`
+To run unit tests with Jest, use the command: `npm run test`
+
+If you set `8800` as your `APP_PORT` env, then you can access the swagger UI website at `http://localhost:8800/api-docs`
 
 It is important to set up environment variables for the system to function properly
 
@@ -100,7 +104,7 @@ Ensure you avoid using `console.log` statements anywhere in the code.
    - When a customer makes a new reservation, the default status is set to 'unpaid' until payments are made and confirmed.
 
 7. Environment Assumption:
-   - Staging, development, test, and production Node environments all use the same database for simplicity in this test case.
+   - `development` and `test` Node environments use the same database for simplicity in this test case.
 
 8. Actual Checkout Time Assumption:
    - The guest will provide the actual checkout time in the format `YYYY-MM-DD HH:mm`, for example: "2021-01-01 16:28"

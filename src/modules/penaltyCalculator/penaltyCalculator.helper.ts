@@ -1,4 +1,3 @@
-import { UnprocessableEntityError } from '../../errors';
 import { CalculateFeeParams } from './penaltyCalculator.interface';
 import { WEEKEND_DAYS, ROOM_RATES } from './penaltyCalculator.constant';
 
@@ -24,8 +23,6 @@ export const calculateOverstayFee = (params: CalculateFeeParams): number => {
 
   const roomType = params.Room_type.toLowerCase() as keyof typeof ROOM_RATES;
   const roomRates = ROOM_RATES[roomType];
-
-  if (!roomRates) throw new UnprocessableEntityError(`Invalid Room_type: ${params.Room_type}`);
 
   // Determine the applicable rate based on the day
   const rateIncrease = isWeekend ? roomRates.Weekend_rates_increase : roomRates.Weekday_rates_increase;
