@@ -36,13 +36,13 @@ This section will guide you through the setup process required to get up and run
 
 2. Fill the `.env` file you created with the database credentials
 
-3. Run `npm run make:migration` to generate migration files, e.g `npm run make:migration -- --name create_reservation_table`. This is OPTIONAL since the migration files have already been generated
+3. Run `npm run migrate` to create the tables, You can run `npm run migrate:undo` to undo the last migration or `npm run migrate:undo:all` to undo all migrations
 
-4. Run `npm run migrate` to create the tables, You can run `npm run migrate:undo` to undo the last migration or `npm run migrate:undo:all` to undo all migrations
+4. Run `npm run seed:all` to populate tables with needed data
 
-5. Run `npm run make:seed` to generate seeder files, e.g `npm run make:seed -- --name seed_customer_reservations`. This is OPTIONAL since the seeder files have already been generated
+5. Optionally run `npm run make:migration` to generate migration files, e.g `npm run make:migration -- --name create_reservation_table`. This is OPTIONAL since the migration files have already been generated
 
-6. Run `npm run seed:all` to populate tables with needed data
+6. Optionally run `npm run make:seed` to generate seeder files, e.g `npm run make:seed -- --name seed_customer_reservations`. This is OPTIONAL since the seeder files have already been generated
 
 
 ### Development
@@ -50,6 +50,8 @@ This section will guide you through the setup process required to get up and run
 To start the service, use the command: `npm run start`
 
 Use `development` as your node environment `NODE_ENV` to run the application
+
+If you set `8800` as your `APP_PORT` env, then you can access the swagger UI at `http://localhost:8800/api-docs`
 
 It is important to set up environment variables for the system to function properly
 
@@ -76,7 +78,7 @@ Example: `logger.error('You just committed a crime!')`
 
 Ensure you avoid using `console.log` statements anywhere in the code.
 
-### Assumptions:
+### Assumptions
 
 1. Weekend Days Definition:
    - For simplicity, weekends are considered as Saturday and Sunday.
@@ -103,7 +105,7 @@ Ensure you avoid using `console.log` statements anywhere in the code.
 8. Actual Checkout Time Assumption:
    - The guest will provide the actual checkout time in the format `YYYY-MM-DD HH:mm`, for example: "2021-01-01 16:28"
 
-### Approach:
+### Approach
 
 1. Endpoints:
 

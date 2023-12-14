@@ -6,7 +6,14 @@ import { handleError } from './helpers/errorHandler';
 import { initiateModuleRoutes } from './modules/routes';
 import express, { Request, Response, NextFunction } from 'express';
 
+const swaggerSpecs = require('../swagger');
+const swaggerUi = require('swagger-ui-express');
+
 const app = express();
+const options = { customSiteTitle: "Overstay Penalty API" };
+
+app.use('/api-docs', swaggerUi.serve);
+app.get('/api-docs', swaggerUi.setup(swaggerSpecs, options));
 
 app.use(cors());
 app.use(compression());
