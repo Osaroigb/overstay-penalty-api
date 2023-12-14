@@ -24,7 +24,7 @@ Reservation.init(
   {
     reservation_id: {
       primaryKey: true,
-      type: DataTypes.INTEGER().UNSIGNED,
+      type: DataTypes.INTEGER(),
       allowNull: false
     },
     Room_type: {
@@ -32,11 +32,11 @@ Reservation.init(
       allowNull: false
     },
     Customer_id: {
-      type: DataTypes.INTEGER().UNSIGNED,
+      type: DataTypes.INTEGER(),
       allowNull: false
     },
     Hourly_rate: {
-      type: DataTypes.INTEGER().UNSIGNED,
+      type: DataTypes.INTEGER(),
       allowNull: false
     },
     status: {
