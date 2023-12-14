@@ -55,14 +55,14 @@ Use `development` as your node environment `NODE_ENV` to run the application
 
 To run unit tests with Jest, use the command: `npm run test`
 
-If you set `8800` as your `APP_PORT` env, then you can access the swagger UI website at `http://localhost:8800/api-docs`
+If you set `8800` as your `APP_PORT` env, then you can access the [swagger UI website](http://localhost:8800/api-docs)
 
 It is important to set up environment variables for the system to function properly
 
 
 ### API Documentation
 
-Explore the API endpoints and learn how to use them by referring to the Postman Documentation published here `https://documenter.getpostman.com/view/23691550/2s9YkkeNcw`
+Explore the API endpoints and learn how to use them by referring to the [Postman Documentation](https://documenter.getpostman.com/view/23691550/2s9YkkeNcw) 
 
 This documentation provides a detailed guide on interacting with the service, including request payloads, response formats, and usage examples.
 
