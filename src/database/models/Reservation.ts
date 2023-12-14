@@ -49,6 +49,7 @@ Reservation.init(
   },
   {
     tableName: 'reservations',
+    timestamps: false,
     sequelize
   }
 );

@@ -3,6 +3,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import compression from 'compression';
 import { handleError } from './helpers/errorHandler';
+import { initiateModuleRoutes } from './modules/routes';
 import express, { Request, Response, NextFunction } from 'express';
 
 const app = express();
@@ -15,6 +16,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 app.get('/', (_req, res) => res.send('Welcome to Overstay Penalty API'));
+
+initiateModuleRoutes(app);
 
 app.use((req, res, _next): void => {
   res.status(404).send({
